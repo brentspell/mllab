@@ -36,7 +36,7 @@ classifier.fit(
 test['predict'] = list(classifier.predict(test[features], as_iterable = True))
 print(
    'accuracy:   ',
-   (test['predict'] == test['label_i']).sum() / len(test)
+   (test['predict'] == test['label_i']).astype(float).sum() / len(test)
 )
 
 # classify a sample
