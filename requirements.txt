@@ -1,7 +1,10 @@
+cycler==0.10.0
+matplotlib==1.5.3
 numpy==1.11.2
 pandas==0.19.0
 protobuf==3.0.0
 py==1.4.31
+pyparsing==2.1.10
 pytest==3.0.3
 python-dateutil==2.5.3
 pytz==2016.7
