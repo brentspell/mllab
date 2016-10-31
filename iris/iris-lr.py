@@ -22,21 +22,21 @@ test  = iris.drop(train.index)
 
 # train the logistic model
 classifier = tfl.LinearClassifier(
-   n_classes = len(classes),
-   feature_columns = tfl.infer_real_valued_columns_from_input(iris[features])
+    n_classes = len(classes),
+    feature_columns = tfl.infer_real_valued_columns_from_input(iris[features])
 )
 classifier.fit(
-   train[features],
-   train['label_i'],
-   steps = TRAIN_STEPS,
-   batch_size = TRAIN_BATCH
+    train[features],
+    train['label_i'],
+    steps = TRAIN_STEPS,
+    batch_size = TRAIN_BATCH
 )
 
 # test the model
 test['predict'] = list(classifier.predict(test[features], as_iterable = True))
 print(
-   'accuracy:   ',
-   (test['predict'] == test['label_i']).astype(float).sum() / len(test)
+    'accuracy:   ',
+    (test['predict'] == test['label_i']).astype(float).sum() / len(test)
 )
 
 # classify a sample

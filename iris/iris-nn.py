@@ -14,7 +14,7 @@ iris     = pd.read_csv('iris.csv')
 features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
 classes  = iris['label'].unique()
 for c in classes:
-   iris[c] = iris['label'].map(lambda l: l == c).astype(float)
+    iris[c] = iris['label'].map(lambda l: l == c).astype(float)
 
 # permute and partition the dataset
 train = iris.sample(frac = TRAIN_PART, random_state = RANDOM_SEED)
@@ -40,27 +40,27 @@ session = tf.Session()
 session.run(tf.initialize_all_variables())
 
 for i in range(TRAIN_STEPS):
-   t = train.sample(TRAIN_BATCH)
-   session.run(
-      do_train,
-      feed_dict = {x:  train[features],
-                   y_: train[classes]})
+    t = train.sample(TRAIN_BATCH)
+    session.run(
+        do_train,
+        feed_dict = {x:  train[features],
+                     y_: train[classes]})
 
 # test the model
 print()
 print(
-   'accuracy:   ',
-   session.run(
-      do_eval,
-      feed_dict = {x:  test[features],
-                   y_: test[classes]}
-   )
+    'accuracy:   ',
+    session.run(
+        do_eval,
+        feed_dict = {x:  test[features],
+                     y_: test[classes]}
+    )
 )
 
 # classify a sample
 def classify(xs):
-   hits = session.run(tf.argmax(y, 1), feed_dict = {x: xs[features]})
-   return [classes[h] for h in hits]
+    hits = session.run(tf.argmax(y, 1), feed_dict = {x: xs[features]})
+    return [classes[h] for h in hits]
 
 np.random.seed()
 s = test.sample(1)
