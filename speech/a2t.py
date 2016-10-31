@@ -12,7 +12,7 @@ def audio_handler(rec, audio):
 def ambient_handler():
    rec.adjust_for_ambient_noise(src)
 
-rec = a2t.rec()
+rec = a2t.Recognizer()
 src = a2t.Microphone()
 
 rec.listen_in_background(src, audio_handler)
