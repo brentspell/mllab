@@ -1,5 +1,9 @@
-init:
-	pip3 install -r requirements.txt
+venv:
+	virtualenv --no-site-packages venv
+
+init: venv
+	source venv/bin/activate; \
+	pip install -r requirements.txt
 
 test:
 	py.test tests
