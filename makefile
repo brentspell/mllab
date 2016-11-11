@@ -7,7 +7,7 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 venv:
-	virtualenv --no-site-packages venv
+	virtualenv --no-site-packages -p python3 venv
 
 init: venv
 	. venv/bin/activate && \
