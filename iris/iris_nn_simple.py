@@ -11,8 +11,8 @@ CLASSES     = ["Iris-setosa", "Iris-versicolor", "Iris-virginica"]
 
 # load the iris dataset
 columns = FEATURES + ['label']
-train   = pd.read_csv('iris_train.csv', header=None, names=columns)
-test    = pd.read_csv('iris_test.csv', header=None, names=columns)
+train   = pd.read_csv('../data/iris/iris_train.csv', header=None, names=columns)
+test    = pd.read_csv('../data/iris/iris_test.csv', header=None, names=columns)
 
 # generate the one-hot class columns
 for c in CLASSES:

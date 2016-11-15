@@ -13,8 +13,8 @@ TRAIN_BATCH = 100
 # load the iris dataset
 features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
 columns  = features + ['label']
-train    = pd.read_csv('iris_train.csv', header=None, names=columns)
-test     = pd.read_csv('iris_test.csv', header=None, names=columns)
+train    = pd.read_csv('../data/iris/iris_train.csv', header=None, names=columns)
+test     = pd.read_csv('../data/iris/iris_test.csv', header=None, names=columns)
 classes  = list(train['label'].unique())
 
 # convert label names to indexes
